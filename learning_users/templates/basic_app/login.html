@@ -1,0 +1,23 @@
+{% extends "basic_app/base.html" %}
+{% block body_block %}
+
+<div class="container py-4">
+  <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Please Login</h1>
+        <form action="{% url 'basic_app:user_login' %}" enctype="multipart/form-data" method="post">
+          <div class="mb-3">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" name="username" placeholder="Enter username">
+            <label for="password">Password:</label>
+            <input type="password" name="password">
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <!-- <button class="btn btn-primary btn-lg" type="button">Register Here</button> -->
+      </div>
+    </div>
+</div>
+
+{% endblock %}
